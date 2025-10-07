@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\100.jpg" />
+    <None Remove="Assets\Apps.png" />
+    <None Remove="Assets\icon.png" />
+    <None Remove="Assets\MenuBar.png" />
+    <None Remove="Assets\Updates.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks.SimpleIcons" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OSVersionExt">
+      <HintPath>..\..\..\..\Downloads\net8.0-windows_2\OSVersionExt.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\100.jpg" />
+    <Resource Include="Assets\Apps.png" />
+    <Resource Include="Assets\icon.png" />
+    <Resource Include="Assets\MenuBar.png" />
+    <Resource Include="Assets\Updates.png" />
+  </ItemGroup>
+
+</Project>

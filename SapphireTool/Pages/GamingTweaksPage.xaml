@@ -1,0 +1,231 @@
+﻿<Page x:Class="SapphireTool.Pages.GamingTweaksPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SapphireTool.Pages"
+      mc:Ignorable="d" xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      d:DesignHeight="1450" d:DesignWidth="800" Title="GamingTweaksPage">
+    <Grid Background="#1C1A26">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ui:TextBlock FontTypography="Title" Text="Gaming Tweaks" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" Margin="30,20,30,10" />
+        <StackPanel Grid.Row="1" Margin="30,0,30,20">
+            <ui:CardExpander Margin="0,0,0,10" IsExpanded="True">
+                <ui:CardExpander.Header>
+                    <ui:TextBlock FontTypography="Title" Text="Recommended" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                </ui:CardExpander.Header>
+
+                <StackPanel>
+                    <Border Padding="12" Margin="0,0,0,10" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Margin="0">
+                                <ui:TextBlock FontTypography="BodyStrong" Text="Disable Preemption (NVIDIA)" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                                <ui:TextBlock FontTypography="Caption" Text="Toggle preemption On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                            </StackPanel>
+                            <ui:ToggleSwitch x:Name="tsPreemption" Click="tsPreemption_Click" Grid.Column="1" VerticalAlignment="Center" OffContent="Disabled" OnContent="Enabled" Margin="0"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Padding="12" Margin="0,0,0,10" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Margin="0">
+                                <ui:TextBlock FontTypography="BodyStrong" Text="Disable HDCP" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                                <ui:TextBlock FontTypography="Caption" Text="Toggle HDCP On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                            </StackPanel>
+                            <ui:ToggleSwitch x:Name="tsHDCP" Click="tsHDCP_Click" Grid.Column="1" VerticalAlignment="Center" OffContent="Disabled" OnContent="Enabled" Margin="0"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Padding="12" Margin="0,0,0,10" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Margin="0">
+                                <ui:TextBlock FontTypography="BodyStrong" Text="Network Optimization" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                                <ui:TextBlock FontTypography="Caption" Text="Optimize network settings" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                            </StackPanel>
+                            <ui:ToggleSwitch x:Name="tsNetworkOptimization" Click="tsNetworkOptimization_Click" Grid.Column="1" VerticalAlignment="Center" OffContent="Disabled" OnContent="Enabled" Margin="0"/>
+                        </Grid>
+                    </Border>
+                    <Border Padding="12" Margin="0,0,0,10" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Margin="0,0,0,8">
+                                <ui:TextBlock FontTypography="BodyStrong" Text="Services" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                                <ui:TextBlock FontTypography="Caption" Text="Select service configuration" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                            </StackPanel>
+                            <ComboBox x:Name="cbServices" Grid.Row="1" SelectionChanged="cbServices_SelectionChanged" HorizontalAlignment="Stretch" Height="40">
+                                <ComboBoxItem Content="Default" />
+                                <ComboBoxItem Content="SapphireOS" />
+                                <ComboBoxItem Content="Minimal" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </ui:CardExpander>
+            <ui:CardExpander Margin="0,0,0,10" IsExpanded="True">
+                <ui:CardExpander.Header>
+                    <ui:TextBlock FontTypography="Title" Text="Miscellaneous" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                </ui:CardExpander.Header>
+
+                <StackPanel>
+                    <Border Padding="12" Margin="0,0,0,10" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Margin="0,0,0,8">
+                                <ui:TextBlock FontTypography="BodyStrong" Text="SvcHostSplitThreshold" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                                <ui:TextBlock FontTypography="Caption" Text="Set SvcHost split threshold" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                            </StackPanel>
+                            <ComboBox x:Name="cbSvcHostSplit" Grid.Row="1" SelectionChanged="cbSvcHostSplit_SelectionChanged" HorizontalAlignment="Stretch" Height="40">
+                                <ComboBoxItem Content="4GB RAM" />
+                                <ComboBoxItem Content="6GB RAM" />
+                                <ComboBoxItem Content="8GB RAM" />
+                                <ComboBoxItem Content="12GB RAM" />
+                                <ComboBoxItem Content="16GB RAM" />
+                                <ComboBoxItem Content="24GB RAM" />
+                                <ComboBoxItem Content="32GB RAM" />
+                                <ComboBoxItem Content="48GB RAM" />
+                                <ComboBoxItem Content="64GB RAM" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+
+                    <Border Padding="12" Margin="0,0,0,10" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Margin="0,0,0,8">
+                                <ui:TextBlock FontTypography="BodyStrong" Text="Win32 Priority Separation" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                                <ui:TextBlock FontTypography="Caption" Text="Set Win32 priority separation (Hex)" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                                <ui:TextBlock FontTypography="Caption" Text="(SapphireOS default is 2A)" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                            </StackPanel>
+                            <ComboBox x:Name="cbWin32Priority" Grid.Row="1" SelectionChanged="cbWin32Priority_SelectionChanged" HorizontalAlignment="Stretch" Height="40">
+                                <ComboBoxItem Content="1A (Hex)" />
+                                <ComboBoxItem Content="14 (Hex)" />
+                                <ComboBoxItem Content="15 (Hex)" />
+                                <ComboBoxItem Content="16 (Hex)" />
+                                <ComboBoxItem Content="18 (Hex)" />
+                                <ComboBoxItem Content="19 (Hex)" />
+                                <ComboBoxItem Content="2A (Hex)" />
+                                <ComboBoxItem Content="24 (Hex)" />
+                                <ComboBoxItem Content="25 (Hex)" />
+                                <ComboBoxItem Content="26 (Hex)" />
+                                <ComboBoxItem Content="28 (Hex)" />
+                                <ComboBoxItem Content="29 (Hex)" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </ui:CardExpander>
+            <ui:CardExpander Margin="0,0,0,10" IsExpanded="True">
+                <ui:CardExpander.Header>
+                    <ui:TextBlock FontTypography="Title" Text="NVIDIA" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                </ui:CardExpander.Header>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <ui:Button x:Name="btnNIP" Click="btnNIP_Click" Content="NIP" Grid.Column="0" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnPState0" Click="btnPState0_Click" Content="P-State 0" Grid.Column="1" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnDisableECC" Click="btnDisableECC_Click" Content="Disable ECC" Grid.Column="2" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnDisableTelemetry" Click="btnDisableTelemetry_Click" Content="Disable Telemetry" Grid.Column="0" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnUnrestrictClockPolicy" Click="btnUnrestrictClockPolicy_Click" Content="Unrestrict Clock Policy" Grid.Column="1" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnNVCleanstall" Click="btnNVCleanstall_Click" Content="NVCleanstall" Grid.Column="2" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnMiscellaneous" Click="btnMiscellaneous_Click" Content="Miscellaneous" Grid.Column="0" Grid.Row="2" Margin="5" HorizontalAlignment="Stretch"/>
+                </Grid>
+            </ui:CardExpander>
+            <ui:CardExpander Margin="0,0,0,10" IsExpanded="True">
+                <ui:CardExpander.Header>
+                    <ui:TextBlock FontTypography="Title" Text="AMD" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                </ui:CardExpander.Header>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <ui:Button x:Name="btnDwords" Click="btnDwords_Click" Content="DWORDS" Grid.Column="0" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnRSS" Click="btnRSS_Click" Content="RSS" Grid.Column="1" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnDriverDownload" Click="btnDriverDownload_Click" Content="Driver Download" Grid.Column="2" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnDisableDXNAVI" Click="btnDisableDXNAVI_Click" Content="Disable DXNAVI" Grid.Column="0" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnShaderCacheOn" Click="btnShaderCacheOn_Click" Content="Shader Cache AlwaysON" Grid.Column="1" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnShaderCacheDefault" Click="btnShaderCacheDefault_Click" Content="Shader Cache Default" Grid.Column="2" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                </Grid>
+            </ui:CardExpander>
+            <ui:CardExpander Margin="0,0,0,10" IsExpanded="True">
+                <ui:CardExpander.Header>
+                    <ui:TextBlock FontTypography="Title" Text="Useful Tools" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                </ui:CardExpander.Header>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <ui:Button x:Name="btnAutoruns" Click="btnAutoruns_Click" Content="Autoruns" Grid.Column="0" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnDevmanview" Click="btnDevmanview_Click" Content="Devmanview" Grid.Column="1" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnServiwin" Click="btnServiwin_Click" Content="Serviwin" Grid.Column="2" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnInSpectre" Click="btnInSpectre_Click" Content="InSpectre" Grid.Column="0" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnMouseTester" Click="btnMouseTester_Click" Content="MouseTester" Grid.Column="1" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnNSudo" Click="btnNSudo_Click" Content="NSudo" Grid.Column="2" Grid.Row="1" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnCRU" Click="btnCRU_Click" Content="CRU" Grid.Column="0" Grid.Row="2" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnAutoDscp" Click="btnAutoDscp_Click" Content="AUTO DSCP" Grid.Column="1" Grid.Row="2" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnMsiUtil" Click="btnMsiUtil_Click" Content="MSI Util" Grid.Column="2" Grid.Row="2" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnDismpp" Click="btnDismpp_Click" Content="DISM++" Grid.Column="0" Grid.Row="3" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnDevCleanup" Click="btnDevCleanup_Click" Content="Dev. Cleanup" Grid.Column="1" Grid.Row="3" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnInterruptAfpt" Click="btnInterruptAfpt_Click" Content="Interrupt AFPT" Grid.Column="2" Grid.Row="3" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnHidUsb" Click="btnHidUsb_Click" Content="HIDUSB" Grid.Column="0" Grid.Row="4" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnMeasureSleep" Click="btnMeasureSleep_Click" Content="MeasureSleep" Grid.Column="1" Grid.Row="4" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnProcessExplorer" Click="btnProcessExplorer_Click" Content="Process Explorer" Grid.Column="2" Grid.Row="4" Margin="5" HorizontalAlignment="Stretch"/>
+                    <ui:Button x:Name="btnReservedCPUSets" Click="btnReservedCPUSets_Click" Content="ReservedCPUSets" Grid.Column="0" Grid.Row="5" Margin="5" HorizontalAlignment="Stretch"/>
+                </Grid>
+            </ui:CardExpander>
+        </StackPanel>
+    </Grid>
+</Page>

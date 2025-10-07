@@ -1,0 +1,440 @@
+﻿<Page x:Class="SapphireTool.Pages.TweaksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SapphireTool.Pages"
+      mc:Ignorable="d" xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      d:DesignHeight="1500" d:DesignWidth="800"
+      Title="TweaksPage">
+
+    <Grid Background="#1C1A26">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ui:TextBlock FontTypography="Title" Text="Tweaks" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" Margin="30" />
+
+        <UniformGrid x:Name="containerGrid" Grid.Row="1" Columns="2" Rows="15">
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5"> 
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable WiFi" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle WiFi On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsWiFi" Click="tsWiFi_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Enable Intel TSX" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Enable Intel Transactional Synchronization Extensions" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsIntelTSX" Click="tsIntelTSX_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Action Center" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Action Center On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsActionCenter" Click="tsActionCenter_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable DEP/NX" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Data Execution Prevention" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsDEP" Click="tsDEP_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Enable Clipboard" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Clipboard On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsClipboard" Click="tsClipboard_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Bluetooth" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Bluetooth On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsBluetooth" Click="tsBluetooth_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="BootMenuPolicy Standard" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Set Boot Menu Policy to Standard" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsBootMenu" Click="tsBootMenu_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable VPN" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle VPN On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsVPN" Click="tsVPN_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable NTFS Encryption" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle NTFS Encryption On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsNTFSEncryption" Click="tsNTFSEncryption_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable FSO and Gamebar" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle FSO and Gamebar On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsFSOGamebar" Click="tsFSOGamebar_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Notifications" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Notifications On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsNotifications" Click="tsNotifications_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Prefetch" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Prefetch On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsPrefetch" Click="tsPrefetch_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="CDROM" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Enable the CDROM service" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsCDROM" Click="tsCDROM_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Print Spooler" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Print Spooler On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsPrintSpooler" Click="tsPrintSpooler_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="NoLazyMode" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Disable MMCSS's lazymode" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsNoLazyMode" Click="tsNoLazyMode_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="UAC For Admin Account" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Configure UAC for admin accounts" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsUACAdmin" Click="tsUACAdmin_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="VR" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Enable VR Services" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsVR" Click="tsVR_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="User Account Control" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Configure User Account Control settings" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsUAC" Click="tsUAC_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Startmenu" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Start Menu On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsStartMenu" Click="tsStartMenu_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Hyper-V" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Hyper-V On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsHyperV" Click="tsHyperV_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Enable VBS" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle Virtualization Based Security" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsVBS" Click="tsVBS_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Wallpaper Quality Reduction" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Prevent wallpaper quality reduction" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsWallpaperQuality" Click="tsWallpaperQuality_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Multi-Plane-Overlay" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle MPO On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsMPO" Click="tsMPO_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Transparency Effects" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle transparency effects" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsTransparency" Click="tsTransparency_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Lock Screen" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle lock screen On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsLockScreen" Click="tsLockScreen_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Animations" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle system animations" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsAnimations" Click="tsAnimations_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable DCOM" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Toggle DCOM On or Off" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsDCOM" Click="tsDCOM_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="NVME Tweaks" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Apply NVME performance tweaks" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsNVMETweaks" Click="tsNVMETweaks_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="LargeSystemCache" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Configure large system cache" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsLargeSystemCache" Click="tsLargeSystemCache_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="System Profile Tweaks" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Apply system profile tweaks" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsSystemProfile" Click="tsSystemProfile_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+        </UniformGrid>
+    </Grid>
+</Page>

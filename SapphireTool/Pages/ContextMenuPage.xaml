@@ -1,0 +1,227 @@
+﻿<Page x:Class="SapphireTool.Pages.ContextMenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SapphireTool.Pages"
+      mc:Ignorable="d" xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      d:DesignHeight="1300" d:DesignWidth="1300"
+      Title="ContextMenuPage">
+
+    <Grid Background="#1C1A26">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ui:TextBlock FontTypography="Title" Text="Context Menu" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" Margin="30" />
+
+        <UniformGrid x:Name="containerGrid" Grid.Row="1" Columns="1" Rows="12">
+
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Command Prompt" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds the Option To Open CMD as Admin In the Right Click Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsCMD" Click="tsCMD_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="PowerShell" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds the Option To Open Powershell as Admin In the Right Click Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsPowerShell" Click="tsPowerShell_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Take Ownership" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds The Option To Take Ownership Of Files And Folders In the Right Click Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsOwner" Click="tsOwner_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Control Panel With God Mode" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds The Option To Open Control Panel With God Mode To The Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsGodMode" Click="tsGodMode_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="File Hash Check" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds the Option To Check The Hash Of a File in The Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsSHA256" Click="tsSHA256_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Kill Not Responding Tasks" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Add The Option To Kill Not Responding Tasks To The Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsNotResponding" Click="tsNotResponding_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Windows Tools" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds The Option to Open Windows Tools To The Right Click Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsWinTools" Click="tsWinTools_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Shutdown/Power Options" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds The Option To Restart/Shutdown etc. To The Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsPwrOpt" Click="tsPwrOpt_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Import Powerplan" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds The Option To Import Powerplans To The Context Menu and Double Click To Import Them" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsPwrPln" Click="tsPwrPln_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Run With Priority" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds The Option To Run Apps With different Priorities In The Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsPriority" Click="tsPriority_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Change Resolution" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds The Option To Change Resolution Without The Settings App In The Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsRes" Click="tsRes_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ui:SymbolIcon FontSize="30" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Reboot To Bios" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Adds The Option To Reboot To Bios To The Context Menu" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsBios" Click="tsBios_Click" Grid.Column="2" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+        </UniformGrid>
+    </Grid>
+</Page>
