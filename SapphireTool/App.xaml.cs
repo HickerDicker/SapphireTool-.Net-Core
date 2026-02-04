@@ -20,8 +20,11 @@ namespace SapphireTool
                 case 22631:
                     Winver = "23H2";
                     break;
-                default:
+                case 26100:
                     Winver = "24H2";
+                    break;
+                default:
+                    Winver = "25H2";
                     break;
             }
         }

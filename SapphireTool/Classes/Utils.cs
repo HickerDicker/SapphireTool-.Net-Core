@@ -54,7 +54,6 @@ public class Utils
 
     public static async Task<bool> DownloadFile(string url, string filename)
     {
-        _ = 2;
         try
         {
             using HttpClient client = new HttpClient();

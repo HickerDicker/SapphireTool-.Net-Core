@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <Reference Include="OSVersionExt">
-      <HintPath>..\..\..\..\Downloads\net8.0-windows_2\OSVersionExt.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\SapphireTool\OSVersionExt.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -122,7 +122,7 @@ public partial class UpdatesPage : Page, IComponentConnector
         {
             string url = currentBuild.Contains("22631")
                 ? "https://hickos.hickdick.workers.dev/0:/Update11.msu"
-                : "https://hickos.hickdick.workers.dev/0:/24H2Update.msu";
+                : "https://hickos.hickdick.workers.dev/0:/25H2Update.msu";
 
             UpdateStatus("Downloading Updates");
             await DownloadFileAsync(new Uri(url), _msuPackage, _cts.Token);
@@ -177,7 +177,7 @@ public partial class UpdatesPage : Page, IComponentConnector
 
     private async Task InstallUpdates(string msuPath)
     {
-        var psiInstall = currentBuild.Contains("26100")
+        var psiInstall = currentBuild.Contains("26200")
             ? new ProcessStartInfo("dism.exe", $"/Online /Add-Package /PackagePath:{msuPath} /norestart") { UseShellExecute = false, CreateNoWindow = true }
             : new ProcessStartInfo("wusa.exe", $"{msuPath} /quiet /norestart") { UseShellExecute = false, CreateNoWindow = true };
         using var process = new Process { StartInfo = psiInstall };
@@ -198,7 +198,7 @@ public partial class UpdatesPage : Page, IComponentConnector
         UpdateStatus("Downloading New Tweaks");
         string url = currentBuild.Contains("22631")
     ? "https://raw.githubusercontent.com/HickerDicker/Version/refs/heads/main/23H2.bat"
-    : "https://raw.githubusercontent.com/HickerDicker/Version/refs/heads/main/24H2.bat";
+    : "https://raw.githubusercontent.com/HickerDicker/Version/refs/heads/main/25H2.bat";
         await Utils.DownloadFile(url, $"{Utils.StartupFolder}\\Script.bat");
         await Utils.DownloadFile("https://raw.githubusercontent.com/HickerDicker/Version/refs/heads/main/HKCU.reg", $"{Utils.UpdateFolder}\\HKCU.reg");
         await Utils.DownloadFile("https://raw.githubusercontent.com/HickerDicker/Version/refs/heads/main/HKCR.reg", $"{Utils.UpdateFolder}\\HKCR.reg");
