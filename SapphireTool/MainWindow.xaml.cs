@@ -28,11 +28,6 @@ namespace SapphireTool
             RootNavigation.Navigate(typeof(BrowsersPage));
         }
 
-        private void updatesBtn_Click(object sender, RoutedEventArgs e)
-        {
-            DashboardPage.Visibility = Visibility.Collapsed;
-            RootNavigation.Navigate(typeof(UpdatesPage));
-        }
 
         private void dashboardNavBtn_Click(object sender, RoutedEventArgs e) => DashboardPage.Visibility = Visibility.Visible;
 
@@ -42,7 +37,6 @@ namespace SapphireTool
 
         private void driversNavBtn_Click(object sender, RoutedEventArgs e) => DashboardPage.Visibility = Visibility.Collapsed;
 
-        private void updatesNavBtn_Click(object sender, RoutedEventArgs e) => DashboardPage.Visibility = Visibility.Collapsed;
         private void ctxMenu_Click(object sender, RoutedEventArgs e) => DashboardPage.Visibility = Visibility.Collapsed;
 
         private void aboutNavBtn_Click(object sender, RoutedEventArgs e) => DashboardPage.Visibility = Visibility.Collapsed;

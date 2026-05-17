@@ -43,6 +43,7 @@ public class Utils
         {
             FileName = command,
             Arguments = arguments,
+            Verb = "runas",
             UseShellExecute = false,
             CreateNoWindow = false
         };
@@ -51,7 +52,26 @@ public class Utils
         process.Start();
         process.WaitForExit();
     }
+    public static void RunWithMinSudo(string command, string arguments)
+    {
+        ProcessStartInfo startInfo = new ProcessStartInfo
+        {
+            FileName = @"C:\PostInstall\Tweaks\MinSudo.exe",
+            Arguments = $"--TrustedInstaller --NoLogo {command} {arguments}",
+            UseShellExecute = false,
+            CreateNoWindow = true,
+            Verb = "runas",
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            RedirectStandardInput = true,
+            WindowStyle = ProcessWindowStyle.Hidden
+        };
 
+        Process process = new Process { StartInfo = startInfo };
+
+        process.Start();
+        process.WaitForExit();
+    }
     public static async Task<bool> DownloadFile(string url, string filename)
     {
         try

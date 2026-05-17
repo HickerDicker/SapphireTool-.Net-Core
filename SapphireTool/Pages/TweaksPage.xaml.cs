@@ -43,6 +43,7 @@ namespace SapphireTool.Pages
             tsCDROM.IsChecked = RegistryTools.CheckTweakState(SapphireTool, "EnableCDROM", 1);
             tsVR.IsChecked = RegistryTools.CheckTweakState(SapphireTool, "EnableVR", 1);
             tsWiFi.IsChecked = RegistryTools.CheckTweakState(SapphireTool, "DisableWiFi", 1);
+            tsDisableDefender.IsChecked = RegistryTools.CheckTweakState(SapphireTool, "DisableDefender", 1);
         }
         public TweaksPage()
         {
@@ -723,6 +724,22 @@ namespace SapphireTool.Pages
                 LocalMachineKey.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Pro Audio", true)?.DeleteValue("Scheduling Category", false);
                 LocalMachineKey.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio", true)?.DeleteValue("Priority", false);
                 SapphireTool.DeleteValue("SystemProfile");
+            }
+        }
+
+        private void tsDisableDefender_Click(object sender, RoutedEventArgs e)
+        {
+            if (tsDisableDefender.IsChecked == true)
+            {
+                Utils.RunCommand("powershell.exe", "-ExecutionPolicy Bypass -File C:\\PostInstall\\Defender\\DisableDefender.ps1");
+                Utils.RunCommand("cmd.exe", "/c C:\\PostInstall\\Defender\\DisableDefenderServices.bat");
+                SapphireTool.SetValue("DisableDefender", 1);
+            }
+            else
+            {
+                Utils.RunCommand("powershell.exe", "-ExecutionPolicy Bypass -File C:\\PostInstall\\Defender\\EnableDefender.ps1");
+                Utils.RunCommand("cmd.exe", "/c C:\\PostInstall\\Defender\\EnableDefenderServices.bat");
+                SapphireTool.DeleteValue("DisableDefender");
             }
         }
     }

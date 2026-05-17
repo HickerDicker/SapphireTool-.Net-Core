@@ -16,7 +16,7 @@
 
         <ui:TextBlock FontTypography="Title" Text="Tweaks" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" Margin="30" />
 
-        <UniformGrid x:Name="containerGrid" Grid.Row="1" Columns="2" Rows="15">
+        <UniformGrid x:Name="containerGrid" Grid.Row="1" Columns="2" Rows="16">
             <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -433,6 +433,19 @@
                         <ui:TextBlock FontTypography="Caption" Text="Apply system profile tweaks" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
                     </StackPanel>
                     <ui:ToggleSwitch x:Name="tsSystemProfile" Click="tsSystemProfile_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
+                </Grid>
+            </Border>
+            <Border Padding="16" Margin="10,0,10,5" Background="{ui:ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ui:ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Height="80" CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="5">
+                        <ui:TextBlock FontTypography="BodyStrong" Text="Disable Defender" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
+                        <ui:TextBlock FontTypography="Caption" Text="Disables Windows Defender" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch x:Name="tsDisableDefender" Click="tsDisableDefender_Click" Grid.Column="1" VerticalAlignment="Top" OffContent="Disabled" OnContent="Enabled" Margin="10"/>
                 </Grid>
             </Border>
         </UniformGrid>

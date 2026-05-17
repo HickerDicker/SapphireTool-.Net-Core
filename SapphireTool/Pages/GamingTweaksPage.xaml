@@ -72,7 +72,6 @@
                             <ComboBox x:Name="cbServices" Grid.Row="1" SelectionChanged="cbServices_SelectionChanged" HorizontalAlignment="Stretch" Height="40">
                                 <ComboBoxItem Content="Default" />
                                 <ComboBoxItem Content="SapphireOS" />
-                                <ComboBoxItem Content="Minimal" />
                             </ComboBox>
                         </Grid>
                     </Border>

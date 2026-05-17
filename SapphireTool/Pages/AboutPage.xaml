@@ -33,7 +33,7 @@
 
                 <StackPanel Grid.Column="1" Margin="10,5,5,5">
                     <ui:TextBlock FontTypography="BodyStrong" Text="Sapphire" Foreground="{ui:ThemeResource TextFillColorPrimaryBrush}" />
-                    <ui:TextBlock FontTypography="Caption" Text="© 2025 Hickensa" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    <ui:TextBlock FontTypography="Caption" Text="© 2026 Hickensa" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
                 </StackPanel>
             </Grid>
         </Border>

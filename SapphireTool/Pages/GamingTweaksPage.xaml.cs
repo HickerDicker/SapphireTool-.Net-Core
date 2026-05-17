@@ -129,23 +129,14 @@ namespace SapphireTool.Pages
             {
                 case "Default":
                     Process.Start(@"C:\PostInstall\Services\exes enable.bat");
-                    Utils.RunCommand("C:\\PostInstall\\Tweaks\\Nsudo.exe", "-U:S -P:E cmd /c C:\\PostInstall\\Services\\Windows-Default-services.reg");
+                    Utils.RunWithMinSudo("cmd.exe", @"/c C:\PostInstall\Services\Windows-Default-services.reg");
                     SapphireTool.SetValue("Services", "Default");
                     break;
 
                 case "SapphireOS":
                     Process.Start(@"C:\PostInstall\Services\exes enable.bat");
-                    Utils.RunCommand("C:\\PostInstall\\Tweaks\\Nsudo.exe", "-U:S -P:E cmd /c C:\\PostInstall\\Services\\SapphireOS-Default-services.reg");
+                    Utils.RunWithMinSudo("cmd.exe", @"/c C:\PostInstall\Services\SapphireOS-Default-services.reg");
                     SapphireTool.SetValue("Services", "SapphireOS");
-                    break;
-
-                case "Minimal":
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services",
-                                    "SapphireServiceMode", "Minimal", RegistryValueKind.String);
-                    Process.Start(@"C:\PostInstall\Services\exes.bat");
-                    Utils.RunCommand("C:\\PostInstall\\Tweaks\\Nsudo.exe", "-U:S -P:E cmd /c C:\\PostInstall\\Services\\minimal-services.reg");
-                    SapphireTool.SetValue("Services", "Minimal");
-                    // this was missing in the last version of the os btw in case anyone is wondering about why they had to manually do it oopsie daisy
                     break;
             }
         }
@@ -159,8 +150,7 @@ namespace SapphireTool.Pages
 
             if (ramValue > 0)
             {
-                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control",
-                                "SvcHostSplitThresholdInKB", ramValue * 1024 * 1024, RegistryValueKind.DWord);
+                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control", "SvcHostSplitThresholdInKB", ramValue * 1024 * 1024, RegistryValueKind.DWord);
                 SapphireTool.SetValue("SvcHostSplitThreshold", ramValue);
             }
         }
@@ -174,8 +164,7 @@ namespace SapphireTool.Pages
 
             if (hexValue > 0)
             {
-                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl",
-                                "Win32PrioritySeparation", hexValue, RegistryValueKind.DWord);
+                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl", "Win32PrioritySeparation", hexValue, RegistryValueKind.DWord);
                 SapphireTool.SetValue("Win32PrioritySeparation", hexValue);
             }
         }

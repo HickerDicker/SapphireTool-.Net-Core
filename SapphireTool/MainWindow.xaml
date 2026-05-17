@@ -48,11 +48,6 @@
                         </ui:NavigationViewItem.Icon>
                     </ui:NavigationViewItem>
 
-                    <ui:NavigationViewItem Name="updatesNavBtn" Content="Updates" NavigationCacheMode="Enabled" TargetPageType="{x:Type pages:UpdatesPage}" Click="updatesNavBtn_Click">
-                        <ui:NavigationViewItem.Icon>
-                            <ui:SymbolIcon Symbol="DualScreenUpdate24" />
-                        </ui:NavigationViewItem.Icon>
-                    </ui:NavigationViewItem>
                     <ui:NavigationViewItem Name="ctxMenuBtn" Content="Context Menu" NavigationCacheMode="Enabled" TargetPageType="{x:Type pages:ContextMenuPage}" Click="ctxMenuBtn_Click">
                         <ui:NavigationViewItem.Icon>
                             <ui:SymbolIcon Symbol="ApprovalsApp24" />
@@ -139,22 +134,6 @@
                                     <StackPanel Grid.Column="1" Margin="24" VerticalAlignment="Center">
                                         <ui:TextBlock Margin="0" FontTypography="BodyStrong" Text="Downloads" TextWrapping="WrapWithOverflow" />
                                         <ui:TextBlock Appearance="Secondary" Foreground="{DynamicResource TextFillColorSecondaryBrush}" Text="Download web browsers/apps with ease" TextWrapping="WrapWithOverflow" />
-                                    </StackPanel>
-                                </Grid>
-                            </ui:CardAction>
-
-                            <ui:CardAction x:Name="updatesBtn" Click="updatesBtn_Click" Grid.Column="2" Margin="4,0,4,0" Padding="0" VerticalAlignment="Stretch" IsChevronVisible="False">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-
-                                    <Image Width="60" Margin="15,0,0,0" Source="pack://application:,,,/Assets/Updates.png" RenderOptions.BitmapScalingMode="HighQuality" />
-
-                                    <StackPanel Grid.Column="1" Margin="10,24,24,24" VerticalAlignment="Center">
-                                        <ui:TextBlock Margin="0" FontTypography="BodyStrong" Text="Updates" TextWrapping="WrapWithOverflow" />
-                                        <ui:TextBlock Appearance="Secondary" Foreground="{DynamicResource TextFillColorSecondaryBrush}" Text="Download Windows Updates without the unnecessary bloat." TextWrapping="WrapWithOverflow" />
                                     </StackPanel>
                                 </Grid>
                             </ui:CardAction>
